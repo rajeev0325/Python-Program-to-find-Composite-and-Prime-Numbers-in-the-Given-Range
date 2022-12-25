@@ -1,0 +1,32 @@
+print("Starting value must be positive !!")
+a=int(input("Enter the start value: "))
+b=int(input("Enter the end value: "))
+x=0
+y=0
+pr=0
+cp=0
+if(a<0 or b<0):
+    print("Invalid input!!")
+else:
+
+    if(a==0 or a==1 ):
+        print(a,"is neither prime nor composite")
+        if a<1:
+            print(a+1,"is neither prime nor composite")
+
+
+    for i in range(a,b+1):
+        count=0
+
+        for j in range(1,i+1):
+            if i%j==0:
+                count=count+1
+        if count==2:
+            print(i,"is prime")
+            pr+=1
+        elif(count>2):
+            print(i,"is composite")
+            cp+=1
+        
+print("Prime numbers in the range is",pr)
+print("Composite numbers in the range is",cp)
